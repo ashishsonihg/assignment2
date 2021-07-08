@@ -3,9 +3,14 @@ let calc=addEventListener('click', onClick);
 
 function onClick(e){
   let btnValue=e.target.value;
+  let type=e.target.dataset.type;
+  if(type=="evalRes" || type=="getAns"){
+      window[type]();
 
-
-  window[e.target.className](e.target.value);
+  }
+  else{
+    window[type](e.target.value);
+  }
 }
 
 function clr() {
