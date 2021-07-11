@@ -28,6 +28,9 @@ function upScreen(value) {
   res.value += value;
 }
 
+function pi(){
+  upScreen(Math.PI);
+}
 function evalRes(){
   let res=document.getElementById('result').value;
   res=res.replace("^","**");
@@ -36,6 +39,25 @@ function evalRes(){
   ans=res;
 }
 
+function fact(){
+  let x=document.getElementById('result').value;
+  let ans=1;
+  for(let i=1;i<=x;i++){
+    ans*=i;
+  }
+  document.getElementById('result').value=ans;
+}
+
+function log() {
+  let res=document.getElementById('result');
+  res.value=Math.round(Math.log(res.value)/Math.log(10)*1000000000)/1000000000;
+}
+
+function ln(){
+
+    let res=document.getElementById('result');
+    res.value=Math.round(Math.log(res.value)*1000000000)/1000000000;
+}
 function trig(value){
   let res=document.getElementById('result');
   let val;
@@ -57,4 +79,9 @@ function trig(value){
 function getAns(){
   document.getElementById('result').value=ans
 
+}
+
+function sqrt(){
+  let res=document.getElementById('result');
+  res.value=res=Math.round(((res.value)**0.5)*1000000000)/1000000000;
 }
